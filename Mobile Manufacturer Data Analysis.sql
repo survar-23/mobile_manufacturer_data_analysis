@@ -2,9 +2,9 @@
 
 
 --Q1--BEGIN 
-SELECT DISTINCT(l1.State) FROM FACT_TRANSACTIONS as t1
+SELECT DISTINCT(l1.State) FROM FACT_TRANSACTIONS as t1     
 inner join DIM_LOCATION as l1 on t1.IDLocation=l1.IDLocation
-WHERE t1.Date BETWEEN '01-01-2005' AND Getdate()
+WHERE t1.Date BETWEEN '01-01-2005' AND Getdate();
 
 
 
@@ -40,7 +40,7 @@ GROUP BY m.Model_Name, l.ZipCode, l.State
 --Q4--BEGIN
 
 SELECT top 1 Model_Name, Unit_price FROM DIM_MODEL
-ORDER BY Unit_price
+ORDER BY Unit_price;
 
 
 
@@ -154,7 +154,7 @@ inner join DIM_CUSTOMER as C1 on T1.IDCustomer=C1.IDCustomer
 GROUP BY C1.IDCustomer
 ORDER BY SUM(T1.TotalPrice) desc)
 GROUP BY C.Customer_Name, YEAR(T.Date)
-ORDER BY C.Customer_Name, YEAR(T.Date)
+ORDER BY C.Customer_Name, YEAR(T.Date);
 
 
 
